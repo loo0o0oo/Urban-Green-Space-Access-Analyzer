@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: green-space-api
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "uvicorn api.main:app --host 0.0.0.0 --port 10000"
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+    rootDir: backend
